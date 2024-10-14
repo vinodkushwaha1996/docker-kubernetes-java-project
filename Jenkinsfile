@@ -12,7 +12,11 @@ pipeline {
             steps {
                 git branch: 'main', url: 'https://github.com/vinodkushwaha1996/docker-kubernetes-java-project.git', credentialsId: '4c70651a-ed30-42ef-83bf-ad8244981573'         }
         }
-
+        stage('Set Up Maven') {
+            steps {
+                sh 'export PATH=$PATH:/opt/apache-maven-3.9.9/bin'
+            }
+        }
         stage('Compile') {
             steps {
                 script {
