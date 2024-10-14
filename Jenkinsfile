@@ -6,7 +6,9 @@ pipeline {
         IMAGE_TAG = "latest"
         AWS_REGION = 'ap-southeast-2'
     }
-
+    tools {
+        maven 'Maven 3.9.9' // Use the name you provided in the Global Tool Configuration
+    }
     stages {
         stage('Checkout') {
             steps {
