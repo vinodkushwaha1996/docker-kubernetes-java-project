@@ -10,8 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/vinodkushwaha1996/docker-kubernetes-java-project.git'
-            }
+                git branch: 'main', url: 'https://github.com/vinodkushwaha1996/docker-kubernetes-java-project.git', credentialsId: 'your-credentials-id'         }
         }
 
         stage('Compile') {
